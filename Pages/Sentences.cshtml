@@ -1,0 +1,26 @@
+﻿@page
+@model SentencesModel
+@{
+    ViewData["Title"] = "Your sentences";
+    int i = 1;
+}
+<h1>@ViewData["Title"]</h1>
+
+
+
+<table>
+        <tr>
+         <th>Index</th>
+        <th>Sentence</th>
+        </tr>
+    @foreach (string item in @Model.Sentences)
+    {
+        <tr>
+        <td>@i</td>    
+        <td>@item</td>
+         </tr>
+     i++;
+    }
+
+
+</table>
