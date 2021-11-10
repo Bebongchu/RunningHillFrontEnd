@@ -4,7 +4,42 @@
     ViewData["Title"] = "Home page";
 }
 
+
+@section Scripts{
+
+<script src="@Url.Content("~/js/helper.js")"></script>
+ 
+
+}
+
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<p id="parid"></p>
+
+<label for="categories">Choose a category:</label>
+<select id="categories"  onchange="UpdateWords()" > 
+
+    @foreach (string item in @Model.categories)
+    {
+        <option value=@item>@item</option>
+    }
+</select>
+
+<label for="words">Select a word</label>
+<select id="words" > 
+</select>
+
+<button type="button" onclick="addWord()">add Word</button>
+<br />
+
+<label>Your Sentence: </label>
+<p id="sentence">my sentence</p>
+
+<br />
+
+<button type="button" onclick="addSentence()">add Sentence</button>
+<label id="postresult"></label>
